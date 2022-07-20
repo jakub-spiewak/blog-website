@@ -27,7 +27,7 @@ We'll create a project consisting of three components:
 
 In our example, we will work on **Kotlin** and **Web** *(JavaScript with TypeScript declaration)*.
 Script that we are going to create would use: [Protobuf Compiler](https://github.com/protocolbuffers/protobuf)
-(with plugins [gRPC Kotlin](https://github.com/grpc/grpc-kotlingrad), [gRPC Java](https://github.com/grpc/grpc-java),
+(with plugins: [gRPC Kotlin](https://github.com/grpc/grpc-kotlingrad), [gRPC Java](https://github.com/grpc/grpc-java),
 [gRPC Web](https://github.com/grpc/grpc-web)), [Gradle](https://gradle.org/np) and [Npm](https://www.npmjs.com/).
 Before we'd run that script, we need to install those.
 Gradle and Npm should be easy to install.
@@ -51,7 +51,7 @@ First things first, we have to prepare proper project structure and create folde
 Then in `./genereted/jvm` we'll create necessary files and folders for a minimal Kotlin/Gradle project.
 Because Kotlin files created by the Protobuf Compiler require Java classes to work, we will create target folders for
 both Java and Kotlin in `./generated/jvm/src/main` folder.
-And in those folders we would generate code into them.
+And in those folders we would generate code.
 
 ```text {4-9}
 ./
@@ -131,8 +131,8 @@ Same as in the Kotlin, we have to add a few dependencies.
 
 # Script
 
-Finally, we can create our script that would make all our jobs for us, from project setup to publish generated code.
-Firstly, we'll create script file, lets name it `run.sh` and place it in `./script` folder.
+Finally, we can create our script that would make all our jobs for us.
+Firstly, we'll create script file, lets name it `run.sh` and place it under `./script` folder.
 
 ```treeview {5}
 ./
@@ -143,9 +143,9 @@ Firstly, we'll create script file, lets name it `run.sh` and place it in `./scri
 ```
 
 ## Constants
-At the beginning of script, we will define some helpful constants.
-Those constants are paths to our previous created directories and files.
 
+At the beginning of script, we will define some helpful constants.
+Those constants represent paths to our previous created directories and files.
 
 ```shell:run.sh
 #!/usr/bin/env bash
@@ -250,7 +250,7 @@ But for the NPM package actually one step left.
 We have to export all generated files in single entry file which is pointed in `package.json` file.
 So we'll create function that would append `index.js` entry file and `index.d.ts` type declaration file with a statement
 that export given file.
-Later we'd use that function and use it on every generated `.js` file.
+Later we'd use that function on every generated `.js` file.
 In that way, we export all gRPC generated files and related to them type declarations.
 
 ```shell:run.sh
