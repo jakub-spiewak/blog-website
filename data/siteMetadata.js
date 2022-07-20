@@ -5,8 +5,8 @@ const siteMetadata = {
   description: 'Web development, microservices and other technical stuff',
   language: 'en-us',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://blog.jakubspiewak.com',
-  siteRepo: 'https://github.com/timlrx/tailwind-nextjs-starter-blog',
+  siteUrl: 'https://jakubspiewak.com',
+  siteRepo: 'https://github.com/jakub-spiewak/blog-website',
   siteLogo: '/static/images/logo.png',
   image: '/static/images/me3.JPG',
   // socialBanner: '/static/images/twitter-card.png',
